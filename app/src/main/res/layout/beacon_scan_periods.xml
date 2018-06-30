@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_margin="8dp"
+    >
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:textColor="?attr/colorPrimary"
+        android:text="@string/beacon_scan_periods"/>
+
+    <TextView
+        android:id="@+id/label_foreground_scan_period"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:text="@string/beacon_foreground_scan_period" />
+
+    <EditText
+        android:id="@+id/value_foreground_scan_period"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:hint="@string/beacon_scan_period_hint"
+        android:inputType="number"
+        />
+
+    <TextView
+        android:id="@+id/label_foreground_between_scan_period"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="@string/beacon_foreground_between_scan_period" />
+    <EditText
+        android:id="@+id/value_foreground_between_scan_period"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:hint="@string/beacon_scan_period_hint"
+        android:inputType="number"
+        />
+
+    <TextView
+        android:id="@+id/label_background_scan_period"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="@string/beacon_background_scan_period" />
+    <EditText
+        android:id="@+id/value_background_scan_period"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:hint="@string/beacon_scan_period_hint"
+        android:inputType="number"
+        />
+
+    <TextView
+        android:id="@+id/label_background_between_scan_period"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="@string/beacon_background_between_scan_period" />
+
+    <EditText
+        android:id="@+id/value_background_between_scan_period"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:hint="@string/beacon_scan_period_hint"
+        android:inputType="number"
+        />
+</LinearLayout>
