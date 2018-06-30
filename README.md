@@ -1,7 +1,7 @@
 This is the source code for **EgiGeoZoneBT** in its last published version 1.2.9.
 
 I have developed this app as a hobby and therefore ask for leniency regarding the code.
-I'm not a pure Android developer.
+I'm not an expert in Android.
 
 I will not continue this App as I am tired of incorporating the Google changes from version to version in the app!
 
