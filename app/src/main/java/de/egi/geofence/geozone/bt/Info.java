@@ -20,15 +20,14 @@ import android.content.pm.PackageInfo;
 import android.content.pm.PackageManager;
 import android.content.pm.PackageManager.NameNotFoundException;
 import android.os.Bundle;
-import android.support.v7.app.ActionBarActivity;
+import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.ImageView;
 
 import de.egi.geofence.geozone.bt.utils.Utils;
 
-@SuppressWarnings("deprecation")
-public class Info extends ActionBarActivity implements OnClickListener{
+public class Info extends AppCompatActivity implements OnClickListener{
 	protected static final String TAG = "InfoEgiGeoZone";
 	private int z = 0;
     public void onCreate(Bundle savedInstanceState) {

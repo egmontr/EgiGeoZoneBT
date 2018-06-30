@@ -20,12 +20,11 @@ import android.content.pm.PackageInfo;
 import android.content.pm.PackageManager;
 import android.content.pm.PackageManager.NameNotFoundException;
 import android.os.Bundle;
-import android.support.v7.app.ActionBarActivity;
+import android.support.v7.app.AppCompatActivity;
 
 import de.egi.geofence.geozone.bt.utils.Utils;
 
-@SuppressWarnings("deprecation")
-public class Privacy extends ActionBarActivity {
+public class Privacy extends AppCompatActivity {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         Utils.onActivityCreateSetDialogTheme(this);
