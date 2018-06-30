@@ -3,7 +3,7 @@ This is the source code for **EgiGeoZoneBT** in its last published version 1.2.9
 I have developed this app as a hobby and therefore ask for leniency regarding the code.
 I'm not a pure Android developer.
 
-I will not continue this app as I am tired of incorporating the Google changes from version to version in the app!
+I will not continue this App as I am tired of incorporating the Google changes from version to version in the app!
 
 Also, I'm not the youngest to continue.
 
@@ -17,4 +17,4 @@ Thanks to all my loyal users worldwide.
   - Broadcasts, alarms ...
 - Migrate GCM to Firebase
  
-For Bluetooth zones please also read this: http://www.davidgyoungtech.com/2017/08/07/beacon-detection-with-android-8 
+Regarding Bluetooth Zones please also read this: http://www.davidgyoungtech.com/2017/08/07/beacon-detection-with-android-8 
