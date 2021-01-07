@@ -54,7 +54,6 @@ import de.egi.geofence.geozone.bt.db.DbMailHelper;
 import de.egi.geofence.geozone.bt.db.DbMoreHelper;
 import de.egi.geofence.geozone.bt.db.DbRequirementsHelper;
 import de.egi.geofence.geozone.bt.db.DbServerHelper;
-import de.egi.geofence.geozone.bt.db.DbSmsHelper;
 import de.egi.geofence.geozone.bt.db.DbZoneHelper;
 import de.egi.geofence.geozone.bt.db.MoreEntity;
 import de.egi.geofence.geozone.bt.db.RequirementsEntity;
@@ -153,7 +152,7 @@ public class BtFence  extends AppCompatActivity implements GoogleApiClient.Conne
         fillSpinnerServer();
 
         // Set SMSs
-        fillSpinnerSMS();
+//        fillSpinnerSMS();
 
         // Set mails
         filleSpinnerMail();
@@ -317,31 +316,31 @@ public class BtFence  extends AppCompatActivity implements GoogleApiClient.Conne
         spinner_mail.setAdapter(adapterMail);
     }
 
-    private void fillSpinnerSMS() {
-        DbSmsHelper datasourceSms = new DbSmsHelper(this);
-
-        Cursor cursorSms = datasourceSms.getCursorAllSms();
-        spinner_sms = (Spinner) findViewById(R.id.spinner_sms_profile);
-        List<String> listSms = new ArrayList<>();
-        while (cursorSms.moveToNext()) {
-            listSms.add(cursorSms.getString(1));
-        }
-        Collections.sort(listSms, new Comparator<String>() {
-            @Override
-            public int compare(String s1, String s2) {
-                return s1.compareToIgnoreCase(s2);
-            }
-        });
-        cursorSms.close();
-
-        listSmsAll = new ArrayList<>();
-        listSmsAll.addAll(listNone);
-        listSmsAll.addAll(listSms);
-
-        ArrayAdapter<String> adapterSms = new ArrayAdapter<>(this, android.R.layout.simple_spinner_item, listSmsAll);
-        adapterSms.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-        spinner_sms.setAdapter(adapterSms);
-    }
+//    private void fillSpinnerSMS() {
+//        DbSmsHelper datasourceSms = new DbSmsHelper(this);
+//
+//        Cursor cursorSms = datasourceSms.getCursorAllSms();
+//        spinner_sms = (Spinner) findViewById(R.id.spinner_sms_profile);
+//        List<String> listSms = new ArrayList<>();
+//        while (cursorSms.moveToNext()) {
+//            listSms.add(cursorSms.getString(1));
+//        }
+//        Collections.sort(listSms, new Comparator<String>() {
+//            @Override
+//            public int compare(String s1, String s2) {
+//                return s1.compareToIgnoreCase(s2);
+//            }
+//        });
+//        cursorSms.close();
+//
+//        listSmsAll = new ArrayList<>();
+//        listSmsAll.addAll(listNone);
+//        listSmsAll.addAll(listSms);
+//
+//        ArrayAdapter<String> adapterSms = new ArrayAdapter<>(this, android.R.layout.simple_spinner_item, listSmsAll);
+//        adapterSms.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+//        spinner_sms.setAdapter(adapterSms);
+//    }
 
     private void fillSpinnerServer() {
         DbServerHelper datasourceServer = new DbServerHelper(this);
@@ -435,7 +434,7 @@ public class BtFence  extends AppCompatActivity implements GoogleApiClient.Conne
         EditText mAlias = (EditText) findViewById(de.egi.geofence.geozone.bt.R.id.value_alias);
 
         Spinner mSpinner_server = (Spinner)findViewById(de.egi.geofence.geozone.bt.R.id.spinner_server_profile);
-        Spinner mSpinner_sms = (Spinner)findViewById(de.egi.geofence.geozone.bt.R.id.spinner_sms_profile);
+//        Spinner mSpinner_sms = (Spinner)findViewById(de.egi.geofence.geozone.bt.R.id.spinner_sms_profile);
         Spinner mSpinner_mail = (Spinner)findViewById(de.egi.geofence.geozone.bt.R.id.spinner_mail_profile);
         Spinner mSpinner_more = (Spinner)findViewById(de.egi.geofence.geozone.bt.R.id.spinner_more_profile);
         Spinner mSpinner_requ = (Spinner)findViewById(de.egi.geofence.geozone.bt.R.id.spinner_requirements_profile);
@@ -472,13 +471,13 @@ public class BtFence  extends AppCompatActivity implements GoogleApiClient.Conne
         String mailProfile = (String)mSpinner_mail.getSelectedItem();
         String moreProfile = (String)mSpinner_more.getSelectedItem();
         String requProfile = (String)mSpinner_requ.getSelectedItem();
-        String smsProfile = (String)mSpinner_sms.getSelectedItem();
+//        String smsProfile = (String)mSpinner_sms.getSelectedItem();
         String serverProfile = (String)mSpinner_server.getSelectedItem();
 
         ze.setId_email(mailProfile.equals("none") ? null : mailProfile);
         ze.setId_more_actions(moreProfile.equals("none") ? null : moreProfile);
         ze.setId_requirements(requProfile.equals("none") ? null : requProfile);
-        ze.setId_sms(smsProfile.equals("none") ? null : smsProfile);
+//        ze.setId_sms(smsProfile.equals("none") ? null : smsProfile);
         ze.setId_server(serverProfile.equals("none") ? null : serverProfile);
 
         // Set tasker settings
@@ -610,7 +609,7 @@ public class BtFence  extends AppCompatActivity implements GoogleApiClient.Conne
                 ((EditText) findViewById(de.egi.geofence.geozone.bt.R.id.value_alias)).setText(Constants.EMPTY_STRING);
 
                 ((Spinner) findViewById(de.egi.geofence.geozone.bt.R.id.spinner_server_profile)).setSelection(0, true);
-                ((Spinner) findViewById(de.egi.geofence.geozone.bt.R.id.spinner_sms_profile)).setSelection(0, true);
+//                ((Spinner) findViewById(de.egi.geofence.geozone.bt.R.id.spinner_sms_profile)).setSelection(0, true);
                 ((Spinner) findViewById(de.egi.geofence.geozone.bt.R.id.spinner_mail_profile)).setSelection(0, true);
                 ((Spinner) findViewById(de.egi.geofence.geozone.bt.R.id.spinner_more_profile)).setSelection(0, true);
                 ((Spinner) findViewById(de.egi.geofence.geozone.bt.R.id.spinner_requirements_profile)).setSelection(0, true);
@@ -756,7 +755,7 @@ public class BtFence  extends AppCompatActivity implements GoogleApiClient.Conne
                 break;
             // Add SMS
             case 4812:
-                fillSpinnerSMS();
+//                fillSpinnerSMS();
                 break;
             // Add Mail
             case 4813:

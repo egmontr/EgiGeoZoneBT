@@ -1,4 +1,4 @@
-This is the source code for **EgiGeoZoneBT** in its last published version 1.2.9.
+This is the source code for **EgiGeoZoneBT** in its last published version 1.3.1.
 
 I have developed this app as a hobby and therefore ask for leniency regarding the code.
 I'm not an expert in Android.
@@ -14,7 +14,7 @@ Thanks to all my loyal users worldwide.
 
 **TODO:**
 - Migrate to Android 8+ changes like
-  - Broadcasts, alarms ...
+- Broadcasts, alarms ...
 - Migrate GCM to Firebase
  
 Regarding Bluetooth Zones please also read this: http://www.davidgyoungtech.com/2017/08/07/beacon-detection-with-android-8 

@@ -23,11 +23,11 @@ import android.os.Environment;
 import android.os.PersistableBundle;
 import android.os.RemoteException;
 import android.provider.Settings;
-import android.telephony.SmsManager;
 import android.telephony.TelephonyManager;
 import android.text.TextUtils;
 import android.util.Log;
 import android.widget.Toast;
+import android.net.Uri;
 
 import com.google.android.gms.location.Geofence;
 
@@ -196,16 +196,7 @@ public class WorkerMain {
             }
         }
         if (ze.getSmsEntity() != null){
-            log.info("Send sms...");
-            if ((transition == Geofence.GEOFENCE_TRANSITION_ENTER && ze.getSmsEntity().isEnter()) ||
-                    (transition == Geofence.GEOFENCE_TRANSITION_EXIT && ze.getSmsEntity().isExit())){
-
-                String textReplace = Utils.replaceAll(context, ze.getSmsEntity().getText(), ze.getName(), ze.getAlias(), transition, ze.getRadius(),
-                        ze.getLatitude(), ze.getLongitude(), realLat, realLng, locationDate, localLocationDate, location_accuracy);
-                String text = textReplace.length() > 155 ? textReplace.substring(0,155) : textReplace;
-
-                doSendSms(context, ze.getName(), ze.getSmsEntity().getNumber(), text, false);
-            }
+            log.error(context.getString(R.string.info_1));
         }
 
         if (ze.getMoreEntity() != null) {
@@ -682,8 +673,17 @@ public class WorkerMain {
             log.debug("sms text: " + text);
 
             // SMS senden
-            SmsManager sms = SmsManager.getDefault();
-            sms.sendTextMessage(to, null, text, null, null);
+//            SmsManager sms = SmsManager.getDefault();
+//            sms.sendTextMessage(to, null, text, null, null);
+
+            Intent intent2 = new Intent(Intent.ACTION_SEND);
+            intent2.setData(Uri.parse("smsto:" + to));  // This ensures only SMS apps respond
+            intent2.putExtra("sms_body", text);
+//            intent.putExtra(Intent.EXTRA_STREAM, attachment);
+            if (intent2.resolveActivity(context.getPackageManager()) != null) {
+                context.startActivity(intent2);
+            }
+
 
             // TestErgebnis
             if (test){

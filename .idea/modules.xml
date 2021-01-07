@@ -2,8 +2,8 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/EgiGeoZone_mat_bt.iml" filepath="$PROJECT_DIR$/EgiGeoZone_mat_bt.iml" />
-      <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/EgiGeoZoneBTGithub.iml" filepath="$PROJECT_DIR$/.idea/modules/EgiGeoZoneBTGithub.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/EgiGeoZoneBTGithub.app.iml" filepath="$PROJECT_DIR$/.idea/modules/app/EgiGeoZoneBTGithub.app.iml" />
     </modules>
   </component>
 </project>

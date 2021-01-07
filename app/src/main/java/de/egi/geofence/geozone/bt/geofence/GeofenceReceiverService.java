@@ -24,7 +24,7 @@ import de.egi.geofence.geozone.bt.utils.Utils;
  */
 
 public class GeofenceReceiverService extends IntentService {
-    private final Logger log = Logger.getLogger(GeofenceReceiver.class);
+    private final Logger log = Logger.getLogger(GeofenceReceiverService.class);
 
     public GeofenceReceiverService() {
         super("GeofenceReceiverService");
@@ -43,9 +43,6 @@ public class GeofenceReceiverService extends IntentService {
                 }
             }
         }finally {
-            // Release the wake lock provided by the WakefulBroadcastReceiver.
-            log.debug("Release the wake lock");
-            GeofenceReceiver.completeWakefulIntent(intent);
         }
     }
 

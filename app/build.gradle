@@ -3,10 +3,15 @@ apply plugin: 'com.android.application'
 android {
     compileSdkVersion 27
 
+
     defaultConfig {
+        applicationId "de.egi.geofence.geozone.bt"
+        minSdkVersion(14)
+        targetSdkVersion(27)
         // Enabling multidex support.
         multiDexEnabled true
     }
+
     buildTypes {
         release {
             minifyEnabled false
@@ -21,15 +26,15 @@ dependencies {
     implementation 'com.android.support:palette-v7:27.1.1'
     implementation 'com.android.support:appcompat-v7:27.1.1'
     implementation 'com.android.support:design:27.1.1'
-    implementation 'com.google.gms:google-services:3.0.0'
-    implementation 'com.google.android.gms:play-services-location:15.0.1'
-    implementation 'com.google.android.gms:play-services-gcm:15.0.1'
-    implementation 'com.google.android.gms:play-services-maps:15.0.1'
-    implementation 'it.sephiroth.android.library.targettooltip:target-tooltip-library:1.3.15'
+    implementation 'com.google.gms:google-services:4.2.0'
+    implementation 'com.google.android.gms:play-services-location:16.0.0'
+    implementation 'com.google.android.gms:play-services-gcm:16.0.0'
+    implementation 'com.google.android.gms:play-services-maps:16.0.0'
     implementation 'log4j:log4j:1.2.17'
     implementation 'de.mindpipe.android:android-logging-log4j:1.0.3'
     implementation 'com.sun.mail:android-mail:1.5.5'
     implementation 'com.sun.mail:android-activation:1.5.5'
     implementation 'com.google.maps.android:android-maps-utils:0.5'
-    implementation 'org.altbeacon:android-beacon-library:2.14'
+    implementation 'org.altbeacon:android-beacon-library:2.15.2'
+    implementation 'it.sephiroth.android.library.targettooltip:target-tooltip-library:1.3.15'
 }

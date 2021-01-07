@@ -118,7 +118,6 @@ public class WorkerGPS{
 				// Return
 				if (!Utils.isBoolean(dbGlobalsHelper.getCursorGlobalsByKey(Constants.DB_KEY_NEW_API))) {
 					currentGeofence.add(getGeofence(ze, Geofence.GEOFENCE_TRANSITION_ENTER));
-					mGeofenceRequester.setInProgressFlag(false);
 					mGeofenceRequester.addGeofences(currentGeofence);
 				}else{
 					SimpleGeofence simpleGeofence = new SimpleGeofence(ze.getName(), ze.getLatitude(), ze.getLongitude(),
@@ -135,7 +134,6 @@ public class WorkerGPS{
 				// Continue
 				if (!Utils.isBoolean(dbGlobalsHelper.getCursorGlobalsByKey(Constants.DB_KEY_NEW_API))) {
 					currentGeofence.add(getGeofence(ze, Geofence.GEOFENCE_TRANSITION_ENTER));
-					mGeofenceRequester.setInProgressFlag(false);
 					mGeofenceRequester.addGeofences(currentGeofence);
 				}else{
 					SimpleGeofence simpleGeofence = new SimpleGeofence(ze.getName(), ze.getLatitude(), ze.getLongitude(),
@@ -151,7 +149,6 @@ public class WorkerGPS{
 				// Return
 				if (!Utils.isBoolean(dbGlobalsHelper.getCursorGlobalsByKey(Constants.DB_KEY_NEW_API))) {
 					currentGeofence.add(getGeofence(ze, Geofence.GEOFENCE_TRANSITION_EXIT));
-					mGeofenceRequester.setInProgressFlag(false);
 					mGeofenceRequester.addGeofences(currentGeofence);
 				}else{
 					SimpleGeofence simpleGeofence = new SimpleGeofence(ze.getName(), ze.getLatitude(), ze.getLongitude(),
@@ -167,7 +164,6 @@ public class WorkerGPS{
 				// Continue
 				if (!Utils.isBoolean(dbGlobalsHelper.getCursorGlobalsByKey(Constants.DB_KEY_NEW_API))) {
 					currentGeofence.add(getGeofence(ze, Geofence.GEOFENCE_TRANSITION_EXIT));
-					mGeofenceRequester.setInProgressFlag(false);
 					mGeofenceRequester.addGeofences(currentGeofence);
 				}else{
 					SimpleGeofence simpleGeofence = new SimpleGeofence(ze.getName(), ze.getLatitude(), ze.getLongitude(),

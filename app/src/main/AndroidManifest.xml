@@ -1,10 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android" xmlns:tools="http://schemas.android.com/tools"
     package="de.egi.geofence.geozone.bt"
-    android:versionCode="129"
-    android:versionName="1.2.9">
-
-    <uses-sdk android:minSdkVersion="14" android:targetSdkVersion="25" />
+    android:versionCode="131"
+    android:versionName="1.3.1">
 
     <uses-permission android:name="de.egi.geofence.geozone.bt.permission.MAPS_RECEIVE" android:protectionLevel="signature"/>
     <uses-permission android:name="com.google.android.providers.gsf.permission.READ_GSERVICES"/>
@@ -25,7 +23,6 @@
     <uses-permission android:name="android.permission.READ_PHONE_STATE"/>
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
-    <uses-permission android:name="android.permission.SEND_SMS"/>
     <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
 
     <uses-permission android:name="android.permission.ACCESS_WIFI_STATE"/>
@@ -159,14 +156,8 @@
                 android:value=".utils.Themes"/>
         </activity>
 
-        <receiver android:name=".geofence.GeofenceReceiver" android:exported="false">
-            <intent-filter >
-                <action android:name="de.egi.geofence.geozone.bt.ACTION_RECEIVE_GEOFENCE"/>
-            </intent-filter>
-        </receiver>
-
         <service
-            android:name=".geofence.GeofenceReceiverService" android:exported="false">
+            android:name=".geofence.GeofenceReceiverService" android:exported="true">
         </service>
 
         <receiver android:name=".StartupReceiver" android:enabled="true" android:exported="false"
